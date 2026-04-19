@@ -71,14 +71,9 @@ src/
 
 ---
 
-## Lisans
-
-Bu depodaki **kaynak kod** için bkz. [LICENSE](LICENSE).  
-Dizi, görseller ve ticari markalar ilgili hak sahiplerine aittir; bu proje yalnızca public API verisini gösterir.
-
----
-
 ## Teşekkür
 
 - [The Rick and Morty API](https://rickandmortyapi.com) — veri ve dokümantasyon  
 - [Wikipedia / MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page) — isteğe bağlı kısa özetler
+
+Bu site yalnızca **public API** verisiyle çalışan resmi olmayan bir hayran projesidir; dizi, görseller ve markalar ilgili hak sahiplerine aittir.
