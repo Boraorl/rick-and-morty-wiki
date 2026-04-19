@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom portal colors as raw hex here — @apply with theme utilities can break in PostCSS. */
+@layer base {
+  body {
+    @apply antialiased font-display min-h-screen text-slate-900 dark:text-slate-100;
+    background-color: #f1f5f9;
+  }
+
+  html.dark body {
+    background-color: #050608;
+  }
+}
+
+@layer components {
+  .cosmic-bg {
+    color: #0f172a;
+    background-color: #f1f5f9;
+    background-image:
+      radial-gradient(ellipse 100% 70% at 50% -25%, rgba(151, 206, 76, 0.12), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 95% 35%, rgba(157, 78, 221, 0.07), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 5% 75%, rgba(34, 211, 238, 0.06), transparent 45%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #e2e8f0 100%);
+  }
+
+  html.dark .cosmic-bg {
+    color: #f1f5f9;
+    background-color: #050608;
+    background-image:
+      radial-gradient(ellipse 100% 70% at 50% -25%, rgba(151, 206, 76, 0.14), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 95% 35%, rgba(157, 78, 221, 0.1), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 5% 75%, rgba(34, 211, 238, 0.07), transparent 45%),
+      linear-gradient(180deg, #0a0e18 0%, #070a12 40%, #050608 100%);
+  }
+
+  .portal-ring {
+    @apply rounded-full border-2;
+    border-color: rgba(151, 206, 76, 0.55);
+    box-shadow:
+      0 0 18px rgba(151, 206, 76, 0.18),
+      0 0 1px rgba(151, 206, 76, 0.35);
+  }
+
+  html.dark .portal-ring {
+    border-color: rgba(151, 206, 76, 0.4);
+    box-shadow:
+      0 0 28px rgba(151, 206, 76, 0.22),
+      0 0 1px rgba(151, 206, 76, 0.4),
+      0 0 20px rgba(151, 206, 76, 0.25),
+      inset 0 0 20px rgba(151, 206, 76, 0.08);
+  }
+
+  .card-rm {
+    @apply rounded-2xl backdrop-blur-sm transition-all duration-300;
+    border: 1px solid #e2e8f0;
+    background-color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  }
+
+  .card-rm:hover {
+    border-color: rgba(151, 206, 76, 0.45);
+    box-shadow:
+      0 4px 20px rgba(15, 23, 42, 0.08),
+      0 0 22px rgba(151, 206, 76, 0.15);
+  }
+
+  html.dark .card-rm {
+    border: 1px solid #2a3142;
+    background-color: rgba(18, 22, 31, 0.9);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  html.dark .card-rm:hover {
+    border-color: rgba(151, 206, 76, 0.35);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.35),
+      0 0 28px rgba(151, 206, 76, 0.22),
+      0 0 1px rgba(151, 206, 76, 0.4);
+  }
+
+  .skip-to-content {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-to-content:focus {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 200;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #97ce4c;
+    color: #0a0e18;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+}
+
+@layer components {
+  .hero-portal {
+    background:
+      radial-gradient(circle at 50% 50%, rgba(151, 206, 76, 0.45), transparent 55%),
+      conic-gradient(from 0deg, #97ce4c 0%, #22d3ee 30%, #9d4edd 60%, #97ce4c 100%);
+    filter: blur(2px);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 18px rgba(151, 206, 76, 0.22), 0 0 1px rgba(151, 206, 76, 0.35);
+  }
+
+  html.dark .text-glow {
+    text-shadow: 0 0 22px rgba(151, 206, 76, 0.35), 0 0 1px rgba(151, 206, 76, 0.4);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.55rem 0.25rem 0.7rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(22, 163, 74, 0.35);
+    background-color: rgba(22, 163, 74, 0.08);
+    color: #166534;
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .chip button {
+    color: rgba(22, 101, 52, 0.65);
+    line-height: 1;
+    font-size: 0.95rem;
+  }
+
+  .chip button:hover {
+    color: #0f172a;
+  }
+
+  html.dark .chip {
+    border: 1px solid rgba(151, 206, 76, 0.35);
+    background-color: rgba(151, 206, 76, 0.08);
+    color: #b5e48c;
+  }
+
+  html.dark .chip button {
+    color: rgba(181, 228, 140, 0.7);
+  }
+
+  html.dark .chip button:hover {
+    color: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse,
+  .animate-spin,
+  .animate-portal-pulse,
+  .animate-portal-spin,
+  .animate-portal-spin-rev,
+  .animate-fade-up {
+    animation: none !important;
+  }
+}
