@@ -3,6 +3,18 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Multiverse Index — unofficial Rick & Morty wiki UI (React, Vite, Tailwind, public API).",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Boraorl/rick-and-morty-wiki.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Boraorl/rick-and-morty-wiki/issues"
+  },
+  "homepage": "https://github.com/Boraorl/rick-and-morty-wiki#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
